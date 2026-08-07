@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+coverage/
+tmp/
+dist/
+bin/
+node_modules/
+.terraform/
+*.tfstate*
+.idea/
+.vscode/
