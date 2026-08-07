@@ -7,11 +7,11 @@ PostgreSQL schema, migrations, and seeds for Mini Soria.
 ## Contents
 
 - `migrations/` — extensions, schema, indexes, authority ranks
-- `seeds/` — fictional healthcare companies and (later) facts/sources
+- `seeds/` — fictional healthcare companies, sources, documents, chunks, facts, conflicts
 
 ## Apply locally
 
-Prefer `make migrate` / `make seed` from `infrastructure/` once Compose is wired.
+Prefer `make postgres` from `infrastructure/` (init scripts apply migrations + seeds).
 
 Manual (pgvector image required):
 
@@ -21,6 +21,7 @@ psql "$DATABASE_URL" -f migrations/002_schema.sql
 psql "$DATABASE_URL" -f migrations/003_indexes.sql
 psql "$DATABASE_URL" -f migrations/004_authority_seed.sql
 psql "$DATABASE_URL" -f seeds/001_companies.sql
+psql "$DATABASE_URL" -f seeds/003_demo_facts.sql
 ```
 
 ## Design invariants
